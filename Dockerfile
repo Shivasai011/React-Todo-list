@@ -1,8 +1,7 @@
-FROM node:17-alpine
-WORKDIR /usr/src/app
-COPY package*.json ./
+FROM node:18-alpine
+WORKDIR /react-todo-list/
+COPY public/ /react-todo-list/public
+COPY src/ /react-todo-list/src
+COPY package.json /react-todo-list/
 RUN npm install
-COPY public/ . 
-COPY src/ .
-EXPOSE 5000
 CMD ["npm", "start"]
